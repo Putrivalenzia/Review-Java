@@ -2,34 +2,35 @@ package com.juaracoding;
 
 public class NomorDua {
     public static void main(String[] args) {
-        int n = 5; // Jumlah baris
+        // Inisialisasi objek StringBuilder untuk menyimpan pola
+        StringBuilder strPrint = new StringBuilder();
 
-        for (int i = 1; i <= n; i++) {
-            // Cetak garis bawah jika baris saat ini genap
+        // Loop pertama untuk mengisi StringBuilder
+        for (int i = 1; i <= 9; i ++) {
             if (i % 2 == 0) {
-                System.out.print("_");
+                // Jika i genap, tambahkan underscore ke StringBuilder
+                strPrint.append("_");
+            } else {
+                // Jika i ganjil, tambahkan nilai i ke StringBuilder
+                strPrint.append(i);
             }
+        }
 
-            // Cetak angka-angka
-            for (int j = 1; j <= n - i + 1; j += 2) {
-                System.out.print(j + (i - 1) * 2);
+        // Cetak pola hasil dari loop pertama
+        System.out.println(strPrint);
 
-                if (j < n - i + 1) {
-                    System.out.print("_");
-                }
-            }
-
-            // Cetak garis bawah di akhir baris jika perlu
-            if ((n - i + 1) % 2 == 0) {
-                System.out.print("_");
-            }
-
-            // Pindah ke baris berikutnya
-            System.out.println();
+        // Loop kedua untuk menghapus karakter pertama dan terakhir secara berulang
+        for (int i = 0; i < 9 / 2; i++) {
+            // Panggil metode removeFirstAndLast() untuk mengubah strPrint
+            strPrint = removeFirstAndLast(strPrint);
+            // Cetak hasil dari perubahan strPrint
+            System.out.println(strPrint);
         }
     }
+
+    // Metode untuk menghapus karakter pertama dan terakhir dari StringBuilder
+    public static StringBuilder removeFirstAndLast(StringBuilder strBuilder) {
+        // Menggunakan substring untuk mengambil potongan string
+        return new StringBuilder(strBuilder.substring(1, strBuilder.length() - 1));
+    }
 }
-
-
-
-
