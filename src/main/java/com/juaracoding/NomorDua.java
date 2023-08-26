@@ -21,7 +21,7 @@ public class NomorDua {
 
         // Loop kedua untuk menghapus karakter pertama dan terakhir secara berulang
         for (int i = 0; i < 9 / 2; i++) {
-            // Panggil metode removeFirstAndLast() untuk mengubah strPrint
+            // Panggil metode removeFirstAndLast() untuk mengubah Print
             print = removeFirstAndLast(print);
             // Cetak hasil dari perubahan strPrint
             System.out.println(print);
